@@ -1,0 +1,111 @@
+<h1 class="sg" name="joomlatools-ui">Joomlatools UI</h1>
+<p class="sg">Joomlatools UI is an intuitive User Interface development kit for the Joomla administrator.
+It is not a Joomla template and therefore does not work with the Joomla markup out-of-the-box.</p>
+<p class="sg-alert sg">This software is not released yet. Things might change!</p>
+<p class="sg"><img src="/joomlatools/images/docman.png" alt="DOCman using Joomlatools UI"></p>
+<h2 class="sg" name="concept">Concept</h2>
+<p class="sg">This is not a framework like Bootstrap. You can&apos;t just copy-paste anything anywhere. Most elements have a predefined spot.</p>
+<p class="sg">Get started quickly by copy-pasting the <a href="/#/section/4" class="sg">list examples</a> and <a href="/#/section/5" class="sg">form examples</a>.</p>
+<h3 class="sg" name="why-not-just-use-bootstrap-or-foundation?">Why not just use <a href="http://getbootstrap.com/" class="sg">Bootstrap</a> or <a href="http://foundation.zurb.com/" class="sg">Foundation</a>?</h3>
+<p class="sg">The reason we created a new framework is because:</p>
+<ul>
+<li class="sg">We want an &quot;App&quot; feeling by leveraging <a href="https://www.w3.org/TR/css-flexbox-1/" class="sg">CSS&apos;s Flexible Box Layout</a></li>
+<li class="sg">We need a non-flexible grid layout where everything has it&apos;s own spot. This might sound counter-productive but read on to understand why we chose this approach</li>
+<li class="sg">We want to leverage modern methodologies like <a href="https://en.bem.info/methodology/" class="sg">BEM</a> and <a href="http://atomicdesign.bradfrost.com/" class="sg">Atomic Design</a></li>
+<li class="sg">We didn&apos;t want to pollute the markup with classes like <code>span12</code> which don&apos;t say anything</li>
+</ul>
+<h4 class="sg" name="but-i-still-see-bootstrap-markup-and-classes?">But I still see Bootstrap markup and classes?</h4>
+<p class="sg">That&apos;s right. We are using a couple of Bootstrap 3 modules since we don&apos;t like to reinvent the wheel.</p>
+<h2 class="sg" name="how-is-it-built-up">How is it built-up</h2>
+<p class="sg">The UI consists of a few different elements:</p>
+<ul>
+<li class="sg">Menubar / Titlebar</li>
+<li class="sg">Sidebar</li>
+<li class="sg">Content area
+<ul>
+<li class="sg">List
+<ul>
+<li class="sg">Toolbar</li>
+<li class="sg">Breadcrumbs</li>
+<li class="sg">Scopebar</li>
+<li class="sg">Table / Grid</li>
+</ul>
+</li>
+<li class="sg">Form</li>
+</ul>
+</li>
+</ul>
+<p class="sg">The menubar, titlebar and sidebar are optional.
+The content area is required and can contain a list of items or an item form.</p>
+<p class="sg">All modals are using the same views to keep the interface recognizable.</p>
+<h3 class="sg" name="the-menubar-/-titlebar-(optional)">The menubar / titlebar (optional)</h3>
+<p class="sg">The menubar holds the main navigation of the application.
+It can contain the application logo, login / logout links and links to the main pages of the application.</p>
+<p class="sg">For modals or other pages that do not have a menubar you could use a titlebar to display what the view is about.</p>
+<h3 class="sg" name="the-sidebar-(optional)">The sidebar (optional)</h3>
+<p class="sg">The sidebar holds sub-navigation for the content area like links (using the <a href="/#/section/2.16" class="sg">navigation</a> molecule), a category or folder tree (using the <a href="/#/section/2.26" class="sg">tree</a> molecule), or quick links to pre-defined filters (using the <a href="/#/section/2.13" class="sg">list</a> molecule)
+All of these elements are navigational elements to change the content of the content area.</p>
+<h3 class="sg" name="the-list-view">The list view</h3>
+<p class="sg">The list view can consist out of the following elements</p>
+<ul>
+<li class="sg">Toolbar</li>
+<li class="sg">Breadcrumbs</li>
+<li class="sg">Scopebar</li>
+<li class="sg">Table / Grid</li>
+</ul>
+<h4 class="sg" name="toolbar">Toolbar</h4>
+<p class="sg">The toolbar should always be placed on top of the list and next to the sidebar.
+Never place the toolbar on top of the sidebar since the actions in the toolbar are only applying to the list, and not to the elements in the left sidebar.</p>
+<p class="sg">The reason that the toolbar is the first element of the list view is because the actions you take (like creating a new item) could ignore the filters that are active on the list below it.
+For example you could have a filtered list that only shows items with a certain category. When creating a new item you could choose to add another category ignoring the category filter.</p>
+<h4 class="sg" name="breadcrumbs-(optional)">Breadcrumbs (optional)</h4>
+<p class="sg">The breadcrumbs display which folder or category we are currently viewing narrowing the results down.</p>
+<h4 class="sg" name="scopebar-(optional)">Scopebar (optional)</h4>
+<p class="sg">The scopebar is where you can filter items or search within the displayed results.</p>
+<h4 class="sg" name="table-/-grid">Table / Grid</h4>
+<p class="sg">The table or grid contains the list of items. Ending with the limit and pagination elements on the bottom showing there is more than the items displayed above.</p>
+<h3 class="sg" name="the-form-view">The form view</h3>
+<p class="sg">The form view can be split up in two columns by using a container element. There are three widths available:</p>
+<ul>
+<li class="sg">Full</li>
+<li class="sg">Main</li>
+<li class="sg">Sub</li>
+</ul>
+<h4 class="sg" name="full">Full</h4>
+<p class="sg">The full container spans the entire width of it&apos;s parent.</p>
+<h4 class="sg" name="main">Main</h4>
+<p class="sg">The main container spans 2/3 of it&apos;s parent.</p>
+<p class="sg">All mandatory fields should be in this container.</p>
+<h4 class="sg" name="sub">Sub</h4>
+<p class="sg">The sub container spans 1/3 of it&apos;s parent.</p>
+<p class="sg">No mandatory fields should be in this container since the container will be below the main container on small screens.
+If you add mandatory fields to this container they could be overseen by users on smaller screens which will cause a lot of irritation.</p>
+<h2 class="sg" name="how-to-start?">How to start?</h2>
+<p class="sg">Since the UI is built using CSS Flexbox the used containers and their order is very important.</p>
+<ol>
+<li class="sg">Load <code>modernizr.js</code>, <code>jquery.js</code>, <code>admin.js</code> and <code>admin.css</code> in the <code>&lt;head&gt;</code> element</li>
+<li class="sg">Copy the <code>fonts/k-icons</code> folder including files to the same parent as the <code>css</code> parent folder. (e.g. <code>/media/css/</code> and <code>/media/fonts/k-icons/</code>)</li>
+<li class="sg">Add <code>&lt;div class=&quot;koowa-container koowa&quot;&gt;&lt;/div&gt;</code> inside the <code>&lt;body&gt;</code> element.</li>
+<li class="sg">Make sure that all parents of the <code>.koowa-container</code> have the <code>.k-flex-wrapper</code> class.</li>
+<li class="sg">Inside the <code>.koowa-container</code> you can start building your pages.</li>
+</ol>
+<p class="sg">The <a href="/#/section/4" class="sg">list examples</a> and <a href="/#/section/5" class="sg">form examples</a> can be used to quickly build pages.</p>
+<h2 class="sg" name="tools-and-methodologies">Tools and Methodologies</h2>
+<ul>
+<li class="sg"><a href="http://atomicdesign.bradfrost.com/" class="sg">Atomic Design</a></li>
+<li class="sg"><a href="http://getbem.com/" class="sg">BEM</a></li>
+<li class="sg"><a href="http://getbootstrap.com/" class="sg">Bootstrap 3</a></li>
+<li class="sg"><a href="http://gruntjs.com/" class="sg">Grunt</a></li>
+<li class="sg"><a href="https://jquery.com/" class="sg">jQuery</a></li>
+<li class="sg"><a href="https://mbraak.github.io/jqTree/" class="sg">JqTree</a></li>
+<li class="sg"><a href="http://dimsemenov.com/plugins/magnific-popup/" class="sg">Magnific Popup</a></li>
+<li class="sg">Mobile-First Responsive design and coding philosophy</li>
+<li class="sg"><a href="https://modernizr.com/" class="sg">Modernizr</a></li>
+<li class="sg"><a href="https://necolas.github.io/normalize.css/" class="sg">Normalize</a></li>
+<li class="sg"><a href="https://useiconic.com/open" class="sg">Open Iconic</a></li>
+<li class="sg"><a href="http://sass-lang.com/" class="sg">SASS</a></li>
+<li class="sg"><a href="https://select2.github.io/" class="sg">Select2</a></li>
+</ul>
+<h2 class="sg" name="faq">FAQ</h2>
+<h3 class="sg" name="the-styling-i&apos;m-using-inside-modals-is-not-looking-like-i-expect-it-to">The styling I&apos;m using inside modals is not looking like I expect it to</h3>
+<p class="sg">Always make sure you have at least one <code>&lt;div&gt;</code> with a <code>koowa</code> class surrounding the elements you want to style.</p>

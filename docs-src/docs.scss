@@ -1,0 +1,108 @@
+@import "../../kodekit-ui/src/scss/core/tools";
+
+
+body.sg {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+// Bigger size for sg-wrapper
+.sg.sg-header .sg-inner,
+.sg.sg-wrapper,
+.sg.sg-top-nav-menu {
+  max-width: 1200px;
+}
+
+
+// Hide the "View CSS" area
+[ng-if="section.css"] {
+  display: none;
+}
+
+
+// Hide the designer tools
+.sg-design {
+  display: none;
+}
+
+
+// Lower zindex for sg labels
+.sg.sg-label {
+  z-index: 99;
+}
+
+
+// Ul
+.sg-section-description > ul {
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// FLexbox all the things
+// Make sure we have a flexbox in the styleguide fullscreen view
+body.sg {
+  & > .view-index.ng-scope {
+    & > ui-view {
+      & > shadow-dom {
+        div[ng-bind-html] {
+          @include flexbox {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            overflow: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Flexbox container
+.sg-flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+
+// Better code styling for in descriptions
+ol code,
+ul code,
+p.sg code,
+.sg-section-description code {
+  font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+  border-radius: 3px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  font-size: smaller;
+  white-space: normal;
+  color: #c25;
+  padding: 1px 3px;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+}
+
+.sg-alert.sg-alert {
+  background: #c0392b;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: white;
+}
+
+p.sg {
+  max-width: 900px;
+}
+
+img {
+  max-width: 100%;
+
+  &:only-child {
+    vertical-align: middle;
+  }
+}
+

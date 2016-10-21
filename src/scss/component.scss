@@ -1,0 +1,28 @@
+/**
+ * Component styling
+ * =================
+ * Used in Joomla views that are not controlled by us, such as menu and module views
+ */
+
+
+/**
+ * Global tools
+ * ------------
+ * Containing different libraries, variables, mixins and functions
+ */
+
+@import "../../../kodekit-ui/src/scss/core/tools";
+
+
+
+/**
+ * Needed styling
+ * --------------
+ * Load needed styling in here
+ */
+
+@import "../../../kodekit-ui/node_modules/select2/src/scss/core";
+@import "../../../kodekit-ui/node_modules/select2-bootstrap-theme/src/select2-bootstrap";
+@import "../../../kodekit-ui/src/scss/molecules/dropdowns"; /* We need the dropdowns for the datepicker until we found a better datepicker */
+@import "../../../kodekit-ui/src/scss/molecules/modal";
+@import "../../../kodekit-ui/src/scss/molecules/select2";
